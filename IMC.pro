@@ -19,6 +19,7 @@ HEADERS += \
 
 FORMS += \
     imc.ui
+TRANSLATIONS = imc_en.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
