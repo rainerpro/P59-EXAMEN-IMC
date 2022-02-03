@@ -10,10 +10,12 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    imc.cpp
+    imc.cpp \
+    principal.cpp
 
 HEADERS += \
-    imc.h
+    imc.h \
+    principal.h
 
 FORMS += \
     imc.ui
