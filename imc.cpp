@@ -6,7 +6,7 @@ imc::imc(QWidget *parent)
     , ui(new Ui::imc)
 {
     ui->setupUi(this);
-    QString filename = "C:/Users/Usuario/OneDrive/Escritorio/Codigo UPS/PERIODO 59/Tareas/PROGRAMACION ORIENTADA EN OBJETOS/pruebas/IMC/registro/";
+    QString filename = " ";
 
     QFile file(filename);
     curfile = filename;
@@ -82,8 +82,9 @@ void imc::on_btCalcular_released()
 
 void imc::savefile()
 {
+
     //QFile file(curfile);
-    QFile archivo("C:/Users/Usuario/OneDrive/Escritorio/Codigo UPS/PERIODO 59/Tareas/PROGRAMACION ORIENTADA EN OBJETOS/pruebas/IMC/registro/"+dias);
+    QFile archivo(QDir::currentPath()+"/../IMC/registro/informe.txt");
     /*if(file.open(QFile::WriteOnly)){
         file.write(m_datos.toUtf8());
     }else{
@@ -92,9 +93,9 @@ void imc::savefile()
     file.close();*/
     if(archivo.open(QFile::WriteOnly | QFile::Truncate)){
     QTextStream salida(&archivo);
-    salida.operator<<("REGISTRO DE IMC\n");
+    salida.operator<<("\n REGISTRO DE IMC\n");
     salida.operator<<("\n___________________________________________________________________\n");
-    salida.operator<<("Cliente: "+m_datos+"\t\t"+ "RUC/CI: "+m_fecha+"\n");
+    salida.operator<<( ""+m_datos+"\t\t");
 
     }else{
         QMessageBox::warning(this,
